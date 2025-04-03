@@ -13,7 +13,7 @@ namespace midas_api.Controllers
         [HttpGet("CompletitionsByAge")]
         public IEnumerable<CompletitionsByAge> Get()
         {
-            string connectionString = "Server=awaqdatabase-tec-932c.b.aivencloud.com;Port=12470;Database=wildwatch;Uid=avnadmin;password='AVNS_MRjSuICGDdluhdCYbor';";
+            string connectionString = Environment.GetEnvironmentVariable("WILDWATCH_DB_CONNECTION");
             MySqlConnection conexion = new MySqlConnection(connectionString);
             conexion.Open();
 
